@@ -36,7 +36,7 @@ class CPT {
     private $singular = 'Showcase';
     private $slug = 'media-showcase';
     private $menu_icon = 'dashicons-heart';
-    private $style = 'media_showcase.css';
+    private $style = 'css/media_showcase.css';
     private $single_template = 'single-media_showcase.php';
     private $archive_template = 'archive-media_showcase.php';
     private $term_template = 'archive-media_showcase_term.php';

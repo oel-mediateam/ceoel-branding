@@ -1,0 +1,57 @@
+.hentry.has-post-thumbnail {
+    
+    padding-top: inherit;
+    
+}
+
+.post-type-archive-showcase .showcase-cat-nav {
+    
+    margin: 16px 0;
+    
+}
+
+.post-type-archive-showcase .showcase-cat-nav ul,
+.post-type-archive-showcase .showcase-cat-nav ul li ul {
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+.post-type-archive-showcase .showcase-cat-nav ul li.cat-parent a:after {
+    
+    font-family: dashicons;
+    content: ' \f347';
+    
+}
+
+.post-type-archive-showcase .showcase-cat-nav ul li ul {
+    
+    display: none;
+    
+}
+
+.post-type-archive-showcase .showcase-cat-nav ul li,
+.post-type-archive-showcase .showcase-cat-nav ul li ul li {
+    
+    display: inline-block;
+    margin: 0 0 5px;
+    padding: 0;
+    
+}
+
+.post-type-archive-showcase .showcase-cat-nav ul li a,
+.post-type-archive-showcase .showcase-cat-nav ul li ul li a {
+    
+    display: block;
+    min-width: 62px;
+    padding: 5px 8px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: normal;
+    color: #fff;
+    text-align: center;
+    background-color: #333;
+    
+}

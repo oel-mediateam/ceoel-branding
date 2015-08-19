@@ -26,11 +26,26 @@
             'show_count' => 0,
             'pad_counts' => 0,
             'hierarchical' => 1,
-            'hide_empty' => 1,
+            'hide_empty' => 0,
             'taxonomy' => 'media_types',
             'title_li' => '',
             'walker' => new Term_Nav_Walker()
         ) );
+        
+    }
+    
+    function displayPageTitle() {
+        
+        $title = get_post_type_object( 'showcase' );
+        return $title->labels->name;
+        
+    }
+    
+    function displayDefaultThumb() {
+        
+        $src = plugins_url() . '/media-showcase/images/nothumb.jpg';
+        
+        return '<a href="' . get_permalink() . '"><img width="640" height="360" src="' . $src . '" class="showcase-thumb" alt="" /></a>';
         
     }
     

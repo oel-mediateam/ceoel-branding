@@ -19,6 +19,18 @@
     <div id="primary" class="content-area">
         
 		<main id="main" class="site-main" role="main">
+    		
+    		<header class="page-header">
+    			
+    			<h1 class="page-title"><?php echo displayPageTitle(); ?></h1>
+				<nav class="showcase-cat-nav">
+    				
+    				<ul>
+        				<?php displayTermNav(); ?>
+                    </ul>
+    				
+				</nav>
+			</header><!-- .page-header -->
 
 		<?php while ( have_posts() ) : the_post(); ?>
         
@@ -38,11 +50,12 @@
                 			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
                 			
             			}
-            			
-            			// get the category
-            			get_showcase_terms( $post_ID, 'media_types' );
-            			
+
             		?>
+            		
+            		<div class="entry-meta">
+                		<?php get_showcase_terms( $post_ID, 'media_types' ); ?>
+            		</div>
             		
             	</header>
             
@@ -82,6 +95,7 @@
 			endif;
 
 			// Previous/next post navigation.
+/*
 			the_post_navigation( array(
 				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'showcase' ) . '</span> ' .
 					'<span class="screen-reader-text">' . __( 'Next post:', 'showcase' ) . '</span> ' .
@@ -90,6 +104,7 @@
 					'<span class="screen-reader-text">' . __( 'Previous post:', 'showcase' ) . '</span> ' .
 					'<span class="post-title">%title</span>',
 			) );
+*/
 
 		// End the loop.
 		endwhile;

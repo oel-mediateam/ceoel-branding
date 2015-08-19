@@ -38,6 +38,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/nothumb.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7907,
+		"inputAbbreviatedPath": "\/images\/nothumb.jpg",
+		"outputAbbreviatedPath": "\/images\/nothumb.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/media_showcase.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -101,6 +112,28 @@
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
+		},
+	"\/scripts\/media_showcase.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scripts\/media_showcase.js",
+		"outputAbbreviatedPath": "\/scripts\/min\/media_showcase-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/scripts\/media_showcase_dev.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scripts\/media_showcase_dev.js",
+		"outputAbbreviatedPath": "\/scripts\/media_showcase.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/single-media_showcase.php": {
 		"fileType": 8192,

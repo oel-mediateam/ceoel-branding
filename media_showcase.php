@@ -37,6 +37,7 @@ class CPT {
     private $slug = 'media-showcase';
     private $menu_icon = 'dashicons-heart';
     private $style = 'css/media_showcase.css';
+    private $script = 'scripts/media_showcase.js';
     private $single_template = 'single-media_showcase.php';
     private $archive_template = 'archive-media_showcase.php';
     private $term_template = 'archive-media_showcase_term.php';
@@ -87,6 +88,12 @@ class CPT {
         
         // add single view template
         $this->add_filter( 'template_include', array( &$this, 'include_templates' ), 1 );
+        
+        // add post excerpt length
+        $this->add_filter( 'excerpt_length', array( &$this, 'set_excerpt_length' ), 15 );
+        
+        // set post excerpt more text
+        $this->add_filter( 'excerpt_more', array( &$this, 'set_excerpt_more' ), 15 );
         
         // on activation
         register_activation_hook( __FILE__, array( &$this, 'flush_rewrite') );
@@ -261,6 +268,13 @@ class CPT {
     public function include_styles_scripts() {
     
         wp_enqueue_style( $this->post_type, plugins_url( $this->style, __FILE__ ) );
+        wp_enqueue_style( $this->post_type, 'dashicons' );
+        
+        // add scripts
+        wp_deregister_script( 'jquery' ); 
+		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', false, '2.1.4' ); 
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( $this->post_type, plugins_url( $this->script, __FILE__ ) );
         
     }
     
@@ -285,6 +299,18 @@ class CPT {
         }
         
         return $path;
+        
+    }
+    
+    public function set_excerpt_length( $length ) {
+        
+        return 13;
+        
+    }
+    
+    public function set_excerpt_more( $more ) {
+        
+        return ' ... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '"> View &raquo;</a>';
         
     }
     

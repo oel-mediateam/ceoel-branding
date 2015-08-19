@@ -24,7 +24,7 @@ class Term_Nav_Walker extends Walker_Category {
 
             if ( $category->term_id == $current_category ) {
                 
-                 $classes .=  ' current-cat';
+                $classes .=  ' current-cat';
                 
             }  elseif ( $category->term_id == $_current_category->parent ) {
                 

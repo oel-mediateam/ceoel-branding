@@ -30,12 +30,35 @@
 				</nav>
 			</header><!-- .page-header -->
 
+            <h2 class="secondary-title">Recent Work</h2>
+            
+            <div class="showcase-entries">
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post(); ?>
         
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                
+                    
+                    <div class="entry-thumb">
+                        <?php
+                            
+                            if ( has_post_thumbnail() ) {
+                                
+                        ?>
+
+                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'full', array( 'class' => 'showcase-thumb' ) ); ?></a>
+	
+                        <?php
+                                
+                            } else {
+                                
+                                echo displayDefaultThumb();
+                                
+                            }
+                                
+                        ?>
+                    </div>
+                    
                 	<header class="entry-header">
                     	
                 		<?php
@@ -43,11 +66,11 @@
                     		// get the title
                 			if ( is_single() ) {
                     			
-                    			the_title( '<h1 class="entry-title">', '</h1>' );
+                    			the_title( '<h3 class="entry-title">', '</h3>' );
                     			
                 			} else {
                     			
-                    			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+                    			the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
                     			
                 			}
                 			
@@ -57,11 +80,8 @@
                 
                 	<div class="entry-content">
                 		<?php
-                			/* translators: %s: Name of current post */
-                			the_content( sprintf(
-                				__( 'Continue reading %s', 'showcase' ),
-                				the_title( '<span class="screen-reader-text">', '</span>', false )
-                			) );
+                    		
+                			the_excerpt();
                 
                 			wp_link_pages( array(
                 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'showcase' ) . '</span>',
@@ -75,7 +95,7 @@
                 		?>
                 	</div><!-- .entry-content -->
                 
-                	<footer class="entry-footer"></footer><!-- .entry-footer -->
+<!--                 	<footer class="entry-footer"></footer> --><!-- .entry-footer -->
                 
                 </article>
         			
@@ -98,6 +118,7 @@
 
 		endif;
 		?>
+        </div>
 
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->

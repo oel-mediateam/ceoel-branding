@@ -1,33 +1,75 @@
 $( document ).ready( function() {
     
-    $.fn.mobileNav();
+    var items = $( '.showcase-cat-nav ul li.cat-parent a' ).not( $( 'ul.children li a' ) );
     
-} );
-
-$.fn.mobileNav = function() {
-    
-    var parents = $( '.showcase-cat-nav ul li.cat-parent a' ).not( $( 'ul.children li a' ) );
-    
-    parents.each( function() {
+    items.each( function() {
         
         $( this ).parent().attr( 'data-open', 0 );
         
     } );
     
-    parents.on( 'click', function() {
+    $.fn.mobileNavClick( items );
+    $.fn.navHover( items );
+    
+} );
+
+$.fn.navHover = function( items ) {
+    
+    items.on( 'mouseover', function() {
         
-        var width = $( window ).width();
-        var open = Number( $( this ).parent().attr( 'data-open' ) );
+        var parent = $( this ).parent();
+        var children = parent.find( '.children' );
+        var open = Number( parent.attr( 'data-open' ) );
         
-        if ( width < 619 ) {
+        if ( $( window ).width() >= 620 ) {
+            
+            if ( open === 0  ) {
+                
+                children.slideDown( function() {
+                
+                    parent.attr( 'data-open', 1 );
+                    
+                    parent.on( 'mouseleave', function() {
+                        
+                        if ( $( window ).width() >= 620 ) {
+                            
+                            children.slideUp( function() {
+                                
+                                parent.attr( 'data-open', 0 );
+                                
+                            } );
+                        
+                        }
+                        
+                    } );
+                    
+                } );
+                
+            }
+            
+        }
+        
+    } );
+    
+};
+
+$.fn.mobileNavClick = function( items ) {
+    
+    items.on( 'click', function() {
+        
+        var parent = $( this ).parent();
+        var children = parent.find( '.children' );
+        var open = Number( parent.attr( 'data-open' ) );
+        
+        if ( $( window ).width() < 619 ) {
             
             if ( open === 0  ) {
             
                 $( this ).addClass( 'open' );
                 
-                $( this ).parent().find( '.children' ).slideDown( function() {
+                children.slideDown( function() {
                 
-                    $( this ).parent().attr( 'data-open', 1 );
+                    parent.attr( 'data-open', 1 );
                     
                 } );
                 
@@ -35,9 +77,9 @@ $.fn.mobileNav = function() {
                 
                 $( this ).removeClass( 'open' );
                 
-                $( this ).parent().find( '.children' ).slideUp( function() {
+                children.slideUp( function() {
                 
-                    $( this ).parent().attr( 'data-open', 0 );
+                    parent.attr( 'data-open', 0 );
                     
                 } );
                 
@@ -47,7 +89,6 @@ $.fn.mobileNav = function() {
             
         }
         
-    } );
-        
+    } );   
     
 };

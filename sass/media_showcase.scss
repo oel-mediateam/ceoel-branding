@@ -1,5 +1,6 @@
 @import "compass/utilities/general/clearfix";
 @import "compass/css3/flexbox";
+@import "compass/css3/border-radius";
 
 .dashicons {
     
@@ -66,22 +67,21 @@
                 a::after {
                     
                     position: absolute;
-                    top: 8px;
+                    top: 5px;
                     right: 3px;
                     width: 32px;
                     height: 32px;
-                    font-family: 'dashicons';
+                    font-family: 'genericons';
                     font-size: 32px;
                     line-height: 32px;
                     color: #888;
-                    content: ' \f347';
+                    content: ' \f431';
                     
                 }
                 
                 .open:after {
                     
-                    top: 6px;
-                    content: ' \f343';
+                    content: ' \f432';
                     
                 }
                 
@@ -100,6 +100,44 @@
                             content: '';
                             
                         }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            .current-cat {
+                
+                a {
+                    
+                    background-color: #2f7dbd;
+                    
+                }
+                
+                a:after {
+                    
+                    color: #fff;
+                    
+                }
+                
+            }
+            
+            .current-cat-parent {
+                
+                @extend .current-cat;
+                
+                .current-cat {
+                    
+                        a {
+                        
+                        background-color: #2f7dbd;
+                        
+                    }
+                    
+                    a:after {
+                        
+                        color: #fff;
                         
                     }
                     
@@ -231,6 +269,102 @@
     
     @extend .tax-media_types;
     
+    .content-area {
+        
+        .hentry {
+            
+            .entry-header {
+                
+                
+                .entry-title {
+                    
+                    margin-bottom: 0;
+                    
+                }
+                
+                .entry-meta {
+                    
+                    font-size: 14px;
+                    margin-bottom: 32px;
+                    color: #888;
+                    
+                    a {
+                        
+                        color: #888;
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            .entry-footer {
+                
+                .showcase-tag-list {
+                    
+                    position: relative;
+                    
+                    .tooltip {
+                    
+                        position: absolute;
+                        width: 250px;
+                        padding: 13px 15px 0;
+                        font-size: 12px;
+                        color: #fff;
+                        background-color: #2f7dbd;
+                        @include border-radius( 3px );
+                        
+                        p:first-child {
+                            
+                            margin-bottom: 0;
+                            
+                        }
+                        
+                        p {
+                            
+                            margin-bottom: 15px;
+                            line-height: normal;
+                            
+                            small {
+                                
+                                font-size: 80%;
+                                line-height: 1;
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                    .tooltip:after {
+                    	bottom: 100%;
+                    	left: 50%;
+                    	border: solid transparent;
+                    	content: " ";
+                    	height: 0;
+                    	width: 0;
+                    	position: absolute;
+                    	pointer-events: none;
+                    	border-color: rgba(47, 125, 189, 0);
+                    	border-bottom-color: #2f7dbd;
+                    	border-width: 10px;
+                    	margin-left: -10px;
+                    }
+                    
+                }
+                               
+            }
+            
+        }
+        
+        .hentry.has-post-thumbnail {
+                
+            padding-top: 48px;
+            
+        }
+        
+    }
+    
 }
 
 // tablet
@@ -289,10 +423,10 @@
                         
                         position: relative;
                         top: 3px;
-                        font-family: 'dashicons';
+                        font-family: 'genericons';
                         font-size: 16px;
                         line-height: 16px;
-                        content: ' \f347';
+                        content: ' \f431';
                         
                     }
                     

@@ -23,6 +23,7 @@
     		<header class="page-header">
     			
     			<h1 class="page-title"><?php echo displayPageTitle(); ?></h1>
+    			<div><a class="showcase-view-all" href="<?php echo get_post_type_archive_link( 'showcase' ); ?>"><span class="dashicons dashicons-arrow-left-alt2"></span> View All</a></div>
 				<nav class="showcase-cat-nav">
     				
     				<ul>
@@ -54,7 +55,7 @@
             		?>
             		
             		<div class="entry-meta">
-                		<?php get_showcase_terms( $post_ID, 'media_types' ); ?>
+                		<?php echo get_showcase_terms( $post_ID, 'media_types' ); ?>
             		</div>
             		
             	</header>
@@ -81,8 +82,8 @@
             	</div><!-- .entry-content -->
             
             	<footer class="entry-footer">
-                    <?php get_showcase_terms( $post_ID, 'participants', '<strong>Participants:</strong> ' ); ?><br />
-                    <?php get_showcase_terms( $post_ID, 'showcase_tags', '<strong>Tags:</strong> ' ); ?>
+                    <?php echo get_showcase_terms( $post_ID, 'participants', '<strong>Participants:</strong> ' ); ?><br />
+                    <?php echo get_showcase_tags( $post_ID, 'showcase_tags'); ?>
             	</footer><!-- .entry-footer -->
             
             </article>
@@ -93,18 +94,6 @@
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
-			// Previous/next post navigation.
-/*
-			the_post_navigation( array(
-				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'showcase' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Next post:', 'showcase' ) . '</span> ' .
-					'<span class="post-title">%title</span>',
-				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'showcase' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Previous post:', 'showcase' ) . '</span> ' .
-					'<span class="post-title">%title</span>',
-			) );
-*/
 
 		// End the loop.
 		endwhile;

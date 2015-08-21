@@ -268,7 +268,7 @@ class CPT {
     public function include_styles_scripts() {
     
         wp_enqueue_style( $this->post_type, plugins_url( $this->style, __FILE__ ) );
-        wp_enqueue_style( $this->post_type, 'dashicons' );
+        wp_enqueue_style( $this->post_type, 'genericons' );
         
         // add scripts
         wp_deregister_script( 'jquery' ); 

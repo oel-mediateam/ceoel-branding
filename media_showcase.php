@@ -310,7 +310,7 @@ class CPT {
     
     public function set_excerpt_more( $more ) {
         
-        return ' ... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '"> View &raquo;</a>';
+        return ' ... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '"> View <span class="genericon genericon-next"></span></a>';
         
     }
     

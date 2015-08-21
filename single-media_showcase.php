@@ -23,7 +23,7 @@
     		<header class="page-header">
     			
     			<h1 class="page-title"><?php echo displayPageTitle(); ?></h1>
-    			<div><a class="showcase-view-all" href="<?php echo get_post_type_archive_link( 'showcase' ); ?>"><span class="dashicons dashicons-arrow-left-alt2"></span> View All</a></div>
+    			<div><a class="showcase-view-all" href="<?php echo get_post_type_archive_link( 'showcase' ); ?>"><span class="genericon genericon-draggable"></span> View All</a></div>
 				<nav class="showcase-cat-nav">
     				
     				<ul>

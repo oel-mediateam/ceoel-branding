@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Media Showcase
-Plugin URI: http://www.ethanslin.com
-Description: A custom post type to create and display varitites of showcase-worthy projects.
+Plugin URI: https://github.com/Lin87/media-showcase
+Description: A portfolio plugin to showcase your multiple media type projects.
 Version: 1.0.0
 Author: Ethan Lin
 Author URI: http://www.ethanslin.com

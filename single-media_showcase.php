@@ -22,8 +22,8 @@
     		
     		<header class="page-header">
     			
-    			<h1 class="page-title"><?php echo displayPageTitle(); ?></h1>
-    			<div><a class="showcase-view-all" href="<?php echo get_post_type_archive_link( 'showcase' ); ?>"><span class="genericon genericon-draggable"></span> View All</a></div>
+    			<h1 class="page-title"><?php echo 'Media ' . displayPageTitle() . ' <span class="dashicons dashicons-video-alt3"></span> <span class="dashicons dashicons-format-audio"></span> <span class="dashicons dashicons-format-image"></span> <span class="dashicons dashicons-video-alt2"></span> <span class="dashicons dashicons-admin-customizer"></span>'; ?></h1>
+    			<div><a class="showcase-view-all" href="<?php echo get_post_type_archive_link( 'showcase' ); ?>"><span class="dashicons dashicons-screenoptions"></span> View All</a></div>
 				<nav class="showcase-cat-nav">
     				
     				<ul>
@@ -77,7 +77,7 @@
             				'separator'   => '<span class="screen-reader-text">, </span>',
             			) );
             			
-            			edit_post_link( __( 'Edit', 'showcase' ), '<span class="edit-link">', '</span>' );
+//             			edit_post_link( __( 'Edit', 'showcase' ), '<span class="edit-link">', '</span>' );
             		?>
             	</div><!-- .entry-content -->
             

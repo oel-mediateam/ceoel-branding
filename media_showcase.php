@@ -24,8 +24,6 @@ License: GPLv2
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-define('WP_DEBUG', true);
-
 // exit if access directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
@@ -37,6 +35,7 @@ class CPT {
     private $slug = 'media-showcase';
     private $menu_icon = 'dashicons-heart';
     private $style = 'css/media_showcase.css';
+    private $customStyle = 'css/custom.css';
     private $script = 'scripts/media_showcase.js';
     private $single_template = 'single-media_showcase.php';
     private $archive_template = 'archive-media_showcase.php';
@@ -94,6 +93,9 @@ class CPT {
         
         // set post excerpt more text
         $this->add_filter( 'excerpt_more', array( &$this, 'set_excerpt_more' ), 15 );
+        
+        // set post excerpt more text
+        $this->add_filter( 'body_class', array( &$this, 'add_term_class' ) );
         
         // on activation
         register_activation_hook( __FILE__, array( &$this, 'flush_rewrite') );
@@ -266,14 +268,12 @@ class CPT {
     }
     
     public function include_styles_scripts() {
-    
+        
+        wp_enqueue_style( 'dashicons' );
         wp_enqueue_style( $this->post_type, plugins_url( $this->style, __FILE__ ) );
-        wp_enqueue_style( $this->post_type, 'genericons' );
+        wp_enqueue_style( $this->post_type . '-custom', plugins_url( $this->customStyle, __FILE__ ) );
         
         // add scripts
-        wp_deregister_script( 'jquery' ); 
-		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', false, '2.1.4' ); 
-		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( $this->post_type, plugins_url( $this->script, __FILE__ ) );
         
     }
@@ -310,7 +310,18 @@ class CPT {
     
     public function set_excerpt_more( $more ) {
         
-        return ' ... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '"> View <span class="genericon genericon-next"></span></a>';
+        return ' ... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '"> View <span class="dashicons dashicons-arrow-right-alt"></span></a>';
+        
+    }
+    
+    public function add_term_class( $classes ) {
+        
+        if( is_tax() ) {
+            global $taxonomy;
+            if( !in_array( $taxonomy, $classes ) )
+                $classes[] = 'showcase-term';
+        }
+        return $classes;
         
     }
     

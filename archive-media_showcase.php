@@ -20,7 +20,7 @@
 
 			<header class="page-header">
 				
-				<h1 class="page-title"><?php echo post_type_archive_title( '', false ); ?></h1>
+				<h1 class="page-title"><?php echo 'Media ' . displayPageTitle() . ' <span class="dashicons dashicons-video-alt3"></span> <span class="dashicons dashicons-format-audio"></span> <span class="dashicons dashicons-format-image"></span> <span class="dashicons dashicons-video-alt2"></span> <span class="dashicons dashicons-admin-customizer"></span>'; ?></h1>
 				<nav class="showcase-cat-nav">
     				
     				<ul>

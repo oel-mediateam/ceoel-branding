@@ -36,7 +36,7 @@
                 
                 $desc = strip_tags( term_description( $term->term_id, $term->taxonomy ) );
                 
-                $list .= '<a class="showcase-tags" href="" data-desc="' . $desc . '">' . $term->name . '</a>';
+                $list .= '<a class="showcase-tags" href="' . get_term_link( $term->term_id, $term->taxonomy ) . '" data-desc="' . $desc . '">' . $term->name . '</a>';
                 
                 $count++;
                 
@@ -63,7 +63,7 @@
             'show_count' => 0,
             'pad_counts' => 0,
             'hierarchical' => 1,
-            'hide_empty' => 0,
+            'hide_empty' => 1,
             'taxonomy' => 'media_types',
             'title_li' => '',
             'walker' => new Term_Nav_Walker()
@@ -74,7 +74,7 @@
     function displayPageTitle() {
         
         $title = get_post_type_object( 'showcase' );
-        return $title->labels->name;
+        return $title->labels->singular_name;
         
     }
     

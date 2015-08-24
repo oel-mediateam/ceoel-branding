@@ -1,33 +1,33 @@
-$( document ).ready( function() {
+jQuery( document ).ready( function() {
     
-    var items = $( '.showcase-cat-nav ul li.cat-parent a' ).not( $( 'ul.children li a' ) );
+    var items = jQuery( '.showcase-cat-nav ul li.cat-parent a' ).not( jQuery( 'ul.children li a' ) );
     
     items.each( function() {
         
-        $( this ).parent().attr( 'data-open', 0 );
+        jQuery( this ).parent().attr( 'data-open', 0 );
         
     } );
     
-    $.fn.mobileNavClick( items );
-    $.fn.navHover( items );
+    jQuery.fn.mobileNavClick( items );
+    jQuery.fn.navHover( items );
     
-    if ( $( '.showcase-tags' ).length ) {
+    if ( jQuery( '.showcase-tags' ).length ) {
         
-        $.fn.tooltip();
+        jQuery.fn.showcaseTooltip();
         
     }
     
 } );
 
-$.fn.navHover = function( items ) {
+jQuery.fn.navHover = function( items ) {
     
     items.on( 'mouseover', function() {
         
-        var parent = $( this ).parent();
+        var parent = jQuery( this ).parent();
         var children = parent.find( '.children' );
         var open = Number( parent.attr( 'data-open' ) );
         
-        if ( $( window ).width() >= 620 ) {
+        if ( jQuery( window ).width() >= 620 ) {
             
             if ( open === 0  ) {
                 
@@ -37,7 +37,7 @@ $.fn.navHover = function( items ) {
                     
                     parent.on( 'mouseleave', function() {
                         
-                        if ( $( window ).width() >= 620 ) {
+                        if ( jQuery( window ).width() >= 620 ) {
                             
                             children.slideUp( function() {
                                 
@@ -59,19 +59,19 @@ $.fn.navHover = function( items ) {
     
 };
 
-$.fn.mobileNavClick = function( items ) {
+jQuery.fn.mobileNavClick = function( items ) {
     
     items.on( 'click', function() {
         
-        var parent = $( this ).parent();
+        var parent = jQuery( this ).parent();
         var children = parent.find( '.children' );
         var open = Number( parent.attr( 'data-open' ) );
         
-        if ( $( window ).width() < 619 ) {
+        if ( jQuery( window ).width() < 619 ) {
             
             if ( open === 0  ) {
             
-                $( this ).addClass( 'open' );
+                jQuery( this ).addClass( 'open' );
                 
                 children.slideDown( function() {
                 
@@ -81,7 +81,7 @@ $.fn.mobileNavClick = function( items ) {
                 
             } else {
                 
-                $( this ).removeClass( 'open' );
+                jQuery( this ).removeClass( 'open' );
                 
                 children.slideUp( function() {
                 
@@ -99,27 +99,25 @@ $.fn.mobileNavClick = function( items ) {
     
 };
 
-$.fn.tooltip = function() {
+jQuery.fn.showcaseTooltip = function() {
     
-    $( '.showcase-tags' ).on( 'mouseover', function() {
+    jQuery( '.showcase-tags' ).on( 'mouseover', function() {
         
-        if ( $( window ).width() >= 955 ) {
+        if ( jQuery( window ).width() >= 955 ) {
             
-            var pos = $( this ).position();
+            var pos = jQuery( this ).position();
             var top = Math.floor( pos.top + 32 );
-            var left = Math.floor( pos.left - 125 + ( $( this ).width() / 2 ) );
+            var left = Math.floor( pos.left - 125 + ( jQuery( this ).width() / 2 ) );
             
-            console.log( top );
+            jQuery( this ).after( '<div class="showcase-tooltip" style="display:none; top: ' + top + 'px; left: ' + left + 'px;">' + '<p><strong>' + jQuery( this ).html() + '</strong></p><p>' + jQuery( this ).attr( 'data-desc' ) + '</p><p><small>Click this tag to see more showcase items like it.</small></p></div>' );
             
-            $( this ).after( '<div class="tooltip" style="display:none; top: ' + top + 'px; left: ' + left + 'px;">' + '<p><strong>' + $( this ).html() + '</strong></p><p>' + $( this ).attr( 'data-desc' ) + '</p><p><small>Click this tag to see more showcase items like it.</small></p></div>' );
-            
-            $( '.tooltip' ).fadeIn( 'fast' );
+            jQuery( '.showcase-tooltip' ).fadeIn( 'fast' );
         
-            $( this ).on( 'mouseleave', function() {
+            jQuery( this ).on( 'mouseleave', function() {
                 
-                $( '.tooltip' ).fadeOut( 'fast', function() {
+                jQuery( '.showcase-tooltip' ).fadeOut( 'fast', function() {
                     
-                    $( this ).remove();
+                    jQuery( this ).remove();
                     
                 } );
                 

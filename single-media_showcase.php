@@ -37,11 +37,12 @@
         
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             
-            	<header class="entry-header">
+<!--             	<header class="entry-header"> -->
                 	
             		<?php
                 		
                 		// get the title
+/*
             			if ( is_single() ) {
                 			
                 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -51,14 +52,15 @@
                 			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
                 			
             			}
+*/
 
             		?>
             		
-            		<div class="entry-meta">
-                		<?php echo get_showcase_terms( $post_ID, 'media_types' ); ?>
-            		</div>
+<!--             		<div class="entry-meta"> -->
+                		<?php /* echo get_showcase_terms( $post_ID, 'media_types' ); */ ?>
+<!--             		</div> -->
             		
-            	</header>
+<!--             	</header> -->
             
             	<div class="entry-content">
             		<?php

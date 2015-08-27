@@ -97,6 +97,8 @@ class CPT {
         // set post excerpt more text
         $this->add_filter( 'body_class', array( &$this, 'add_term_class' ) );
         
+        add_shortcode( 'title_cat' , array( &$this, 'show_title_cat' ));
+        
         // on activation
         register_activation_hook( __FILE__, array( &$this, 'flush_rewrite') );
         
@@ -322,6 +324,22 @@ class CPT {
                 $classes[] = 'showcase-term';
         }
         return $classes;
+        
+    }
+    
+    public function show_title_cat( $att ) {
+        
+        $post_ID = get_the_ID();
+        $content = '';
+        
+        if ( is_single() ) {
+                			
+			$content .= '<h1 class="entry-title">' . get_the_title() . '</h1>';
+			$content .= '<div class="entry-meta">' . get_showcase_terms( $post_ID, 'media_types' ) . '</div>';
+			
+		}
+		
+		return $content;
         
     }
     

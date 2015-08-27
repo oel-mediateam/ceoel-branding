@@ -1,18 +1,26 @@
-/* .tax-participants */
 .post-type-archive-showcase #header-top,
+.post-type-archive-showcase #site-navigation,
+.post-type-archive-showcase #colophon,
+.showcase-term #header-top,
+.showcase-term #site-navigation,
+.showcase-term #colophon,
+.single-showcase #header-top,
+.single-showcase #site-navigation,
+.single-showcase #colophon {
+    
+    background-color: #333;
+    color: #fff;
+    
+}
+
 .post-type-archive-showcase #content,
 .post-type-archive-showcase #primary,
-.post-type-archive-showcase #site-navigation,
-.showcase-term #header-top,
 .showcase-term #content,
 .showcase-term #primary,
-.showcase-term #site-navigation,
-.single-showcase #header-top,
 .single-showcase #content,
-.single-showcase #primary,
-.single-showcase #site-navigation {
+.single-showcase #primary {
     
-    background-color: #343434;
+    background-color: #383737;
     color: #fff;
     
 }
@@ -83,11 +91,12 @@
     
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
     
     .single-showcase #primary #main .type-showcase {
     
         width: 70%;
+        min-width: 900px;
         margin: 0 auto;
         padding: 0;
         
@@ -114,9 +123,16 @@
     
 }
 
+.single-showcase #primary #main .type-showcase .entry-content,
 .single-showcase #primary #main .type-showcase .entry-content * {
     
     color: #fff;
+    
+}
+
+.single-showcase #primary #main .type-showcase .entry-content .entry-meta a {
+    
+    color: #888;
     
 }
 
@@ -124,13 +140,12 @@
 .showcase-term a,
 .single-showcase a {
     
-    color: #fff;
     text-decoration: none;
     
 }
 
-.post-type-archive-showcase a,
-.showcase-term a,
+.post-type-archive-showcase a:hover,
+.showcase-term a:hover,
 .single-showcase a:hover {
     
     text-decoration: underline;
@@ -293,5 +308,38 @@
     
     color: #fff;
     margin-top: 5px;
+    
+}
+
+.post-type-archive-showcase #footer-sidebar .widget a,
+.showcase-term #footer-sidebar .widget a,
+.single-showcase #footer-sidebar .widget a {
+    
+    color: #337ab7;
+    text-decoration: none;
+    
+}
+
+.post-type-archive-showcase #footer-sidebar .widget a:hover,
+.showcase-term #footer-sidebar .widget a:hover,
+.single-showcase #footer-sidebar .widget a:hover {
+    
+    text-decoration: underline;
+    
+}
+
+.post-type-archive-showcase #colophon,
+.showcase-term #colophon,
+.single-showcase #colophon {
+    
+    border-top-color: #525252;
+    
+}
+
+.post-type-archive-showcase #colophon a,
+.showcase-term #colophon a,
+.single-showcase #colophon a {
+    
+    color: #337ab7;
     
 }

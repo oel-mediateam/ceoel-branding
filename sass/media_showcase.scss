@@ -247,7 +247,7 @@
                 
                 .entry-content {
                     
-                    padding: 0 15px 15px;
+                    padding: 0 15px 0;
                     
                     p {
                         
@@ -316,7 +316,35 @@
                 
             }
             
+            .entry-content {
+                
+                .entry-title {
+                        
+                    margin: 16px 0 0;
+                    line-height: normal;
+                    
+                }
+                
+                .entry-meta {
+                
+                    color: #888;
+                    font-size: 14px;
+                    margin: 0 0 32px;
+                    
+                    a {
+                        
+                        font-size: 14px;
+                        color: #888;
+                        
+                    }
+                    
+                }
+                
+            }
+            
             .entry-footer {
+                
+                margin-top: 32px;
                 
                 .showcase-tag-list {
                     

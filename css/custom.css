@@ -130,6 +130,7 @@
     
 }
 
+.single-showcase #primary #main .type-showcase .entry-content .entry-meta,
 .single-showcase #primary #main .type-showcase .entry-content .entry-meta a {
     
     color: #888;
@@ -308,6 +309,20 @@
     
     color: #fff;
     margin-top: 5px;
+    
+}
+
+.single-showcase .content-area .hentry .entry-footer a,
+.single-showcase .content-area .hentry .entry-footer a:visited {
+    
+    color: #fff;
+    
+}
+
+.single-showcase .content-area .hentry .entry-footer a:hover {
+    
+    color: #fff;
+    text-decoration: underline;
     
 }
 

@@ -89,7 +89,7 @@ class CPT {
         $this->add_filter( 'template_include', array( &$this, 'include_templates' ), 1 );
         
         // add post excerpt length
-        $this->add_filter( 'excerpt_length', array( &$this, 'set_excerpt_length' ), 15 );
+        $this->add_filter( 'excerpt_length', array( &$this, 'set_excerpt_length' ), 999 );
         
         // set post excerpt more text
         $this->add_filter( 'excerpt_more', array( &$this, 'set_excerpt_more' ), 15 );
@@ -306,7 +306,7 @@ class CPT {
     
     public function set_excerpt_length( $length ) {
         
-        return 13;
+        return 15;
         
     }
     

@@ -1,76 +1,33 @@
-.dashicons {
-  font-size: 100%;
-  width: auto;
-  height: auto; }
-
 /* CEOEL Branding */
 .post-type-archive-branding .branding-cat-nav, .branding-term .branding-cat-nav, .single-branding .branding-cat-nav {
   margin: 16px 0; }
-  .post-type-archive-branding .branding-cat-nav ul, .branding-term .branding-cat-nav ul, .single-branding .branding-cat-nav ul, .post-type-archive-branding .branding-cat-nav ul li ul, .branding-term .branding-cat-nav ul li ul, .single-branding .branding-cat-nav ul li ul {
+  .post-type-archive-branding .branding-cat-nav ul, .branding-term .branding-cat-nav ul, .single-branding .branding-cat-nav ul {
     margin: 0;
     padding: 0;
     list-style: none; }
-    .post-type-archive-branding .branding-cat-nav ul li, .branding-term .branding-cat-nav ul li, .single-branding .branding-cat-nav ul li, .post-type-archive-branding .branding-cat-nav ul li ul li, .branding-term .branding-cat-nav ul li ul li, .single-branding .branding-cat-nav ul li ul li {
+    .post-type-archive-branding .branding-cat-nav ul li, .branding-term .branding-cat-nav ul li, .single-branding .branding-cat-nav ul li {
       position: relative;
       display: block;
       width: 100%;
       margin: 0 0 6px;
-      padding: 0; }
+      padding: 0;
+      border-right: 1px solid #ccc; }
       .post-type-archive-branding .branding-cat-nav ul li a, .branding-term .branding-cat-nav ul li a, .single-branding .branding-cat-nav ul li a {
         display: block;
-        width: 100%;
-        padding: 10px 8px;
+        padding: 0 6px 2px 3px;
         font-size: 16px;
         font-weight: normal;
-        line-height: normal;
-        color: #fff;
-        text-align: center;
-        background-color: #333; }
-      .post-type-archive-branding .branding-cat-nav ul li ul, .branding-term .branding-cat-nav ul li ul, .single-branding .branding-cat-nav ul li ul {
-        display: none;
-        width: 100%; }
-        .post-type-archive-branding .branding-cat-nav ul li ul li, .branding-term .branding-cat-nav ul li ul li, .single-branding .branding-cat-nav ul li ul li {
-          margin: 0; }
-    .post-type-archive-branding .branding-cat-nav ul .cat-parent, .branding-term .branding-cat-nav ul .cat-parent, .single-branding .branding-cat-nav ul .cat-parent {
-      position: relative; }
-      .post-type-archive-branding .branding-cat-nav ul .cat-parent a::after, .branding-term .branding-cat-nav ul .cat-parent a::after, .single-branding .branding-cat-nav ul .cat-parent a::after {
-        position: absolute;
-        top: 5px;
-        right: 3px;
-        width: 32px;
-        height: 32px;
-        font-family: 'dashicons';
-        font-size: 32px;
-        line-height: 32px;
-        color: #888;
-        content: ' \f347'; }
-      .post-type-archive-branding .branding-cat-nav ul .cat-parent .open:after, .branding-term .branding-cat-nav ul .cat-parent .open:after, .single-branding .branding-cat-nav ul .cat-parent .open:after {
-        content: ' \f343'; }
-      .post-type-archive-branding .branding-cat-nav ul .cat-parent ul li a, .branding-term .branding-cat-nav ul .cat-parent ul li a, .single-branding .branding-cat-nav ul .cat-parent ul li a {
-        background-color: #888; }
-      .post-type-archive-branding .branding-cat-nav ul .cat-parent ul li a::after, .branding-term .branding-cat-nav ul .cat-parent ul li a::after, .single-branding .branding-cat-nav ul .cat-parent ul li a::after {
-        content: ''; }
-    .post-type-archive-branding .branding-cat-nav ul .current-cat a, .branding-term .branding-cat-nav ul .current-cat a, .single-branding .branding-cat-nav ul .current-cat a, .post-type-archive-branding .branding-cat-nav ul .current-cat-parent a, .branding-term .branding-cat-nav ul .current-cat-parent a, .single-branding .branding-cat-nav ul .current-cat-parent a {
-      background-color: #2f7dbd; }
-    .post-type-archive-branding .branding-cat-nav ul .current-cat a:after, .branding-term .branding-cat-nav ul .current-cat a:after, .single-branding .branding-cat-nav ul .current-cat a:after, .post-type-archive-branding .branding-cat-nav ul .current-cat-parent a:after, .branding-term .branding-cat-nav ul .current-cat-parent a:after, .single-branding .branding-cat-nav ul .current-cat-parent a:after {
-      color: #fff; }
-    .post-type-archive-branding .branding-cat-nav ul .current-cat-parent .current-cat a, .branding-term .branding-cat-nav ul .current-cat-parent .current-cat a, .single-branding .branding-cat-nav ul .current-cat-parent .current-cat a, .post-type-archive-branding .branding-cat-nav ul .current-cat-parent .current-cat-parent a, .branding-term .branding-cat-nav ul .current-cat-parent .current-cat-parent a, .single-branding .branding-cat-nav ul .current-cat-parent .current-cat-parent a {
-      background-color: #2f7dbd; }
-    .post-type-archive-branding .branding-cat-nav ul .current-cat-parent .current-cat a:after, .branding-term .branding-cat-nav ul .current-cat-parent .current-cat a:after, .single-branding .branding-cat-nav ul .current-cat-parent .current-cat a:after, .post-type-archive-branding .branding-cat-nav ul .current-cat-parent .current-cat-parent a:after, .branding-term .branding-cat-nav ul .current-cat-parent .current-cat-parent a:after, .single-branding .branding-cat-nav ul .current-cat-parent .current-cat-parent a:after {
-      color: #fff; }
+        line-height: normal; }
+    .post-type-archive-branding .branding-cat-nav ul li:first-child a, .branding-term .branding-cat-nav ul li:first-child a, .single-branding .branding-cat-nav ul li:first-child a {
+      padding-left: 0; }
+    .post-type-archive-branding .branding-cat-nav ul li:last-child, .branding-term .branding-cat-nav ul li:last-child, .single-branding .branding-cat-nav ul li:last-child {
+      border-right: none; }
+      .post-type-archive-branding .branding-cat-nav ul li:last-child a, .branding-term .branding-cat-nav ul li:last-child a, .single-branding .branding-cat-nav ul li:last-child a {
+        padding-right: 0; }
+    .post-type-archive-branding .branding-cat-nav ul .current-cat a, .branding-term .branding-cat-nav ul .current-cat a, .single-branding .branding-cat-nav ul .current-cat a {
+      color: blue; }
 .post-type-archive-branding .content-area .page-header .page-title, .branding-term .content-area .page-header .page-title, .single-branding .content-area .page-header .page-title {
   font-size: 28px; }
-  .post-type-archive-branding .content-area .page-header .page-title .dashicons, .branding-term .content-area .page-header .page-title .dashicons, .single-branding .content-area .page-header .page-title .dashicons {
-    display: none; }
-.post-type-archive-branding .content-area .page-header .branding-view-all, .branding-term .content-area .page-header .branding-view-all, .single-branding .content-area .page-header .branding-view-all {
-  padding: 5px 8px 5px 5px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #333; }
-  .post-type-archive-branding .content-area .page-header .branding-view-all .dashicons, .branding-term .content-area .page-header .branding-view-all .dashicons, .single-branding .content-area .page-header .branding-view-all .dashicons {
-    display: inline;
-    position: relative;
-    top: 2px; }
 .post-type-archive-branding .content-area .secondary-title, .branding-term .content-area .secondary-title, .single-branding .content-area .secondary-title {
   padding: 15px;
   font-size: 24px; }
@@ -99,12 +56,6 @@
           color: #888; }
     .post-type-archive-branding .content-area .branding-entries .type-branding .entry-content, .branding-term .content-area .branding-entries .type-branding .entry-content, .single-branding .content-area .branding-entries .type-branding .entry-content {
       padding: 0 15px 0; }
-      .post-type-archive-branding .content-area .branding-entries .type-branding .entry-content p iframe, .branding-term .content-area .branding-entries .type-branding .entry-content p iframe, .single-branding .content-area .branding-entries .type-branding .entry-content p iframe {
-        margin-bottom: 0; }
-      .post-type-archive-branding .content-area .branding-entries .type-branding .entry-content iframe, .branding-term .content-area .branding-entries .type-branding .entry-content iframe, .single-branding .content-area .branding-entries .type-branding .entry-content iframe {
-        width: 100%;
-        vertical-align: middle;
-        margin-bottom: 16px; }
 
 .single-branding .content-area .hentry .entry-header .entry-title {
   margin-bottom: 0; }
@@ -128,7 +79,7 @@
   padding-top: 48px; }
 
 @media screen and (min-width: 619px) {
-  .post-type-archive-branding .branding-cat-nav ul li, .branding-term .branding-cat-nav ul li, .single-branding .branding-cat-nav ul li, .post-type-archive-branding .branding-cat-nav ul li ul li, .branding-term .branding-cat-nav ul li ul li, .single-branding .branding-cat-nav ul li ul li {
+  .post-type-archive-branding .branding-cat-nav ul li, .branding-term .branding-cat-nav ul li, .single-branding .branding-cat-nav ul li {
     position: relative;
     display: inline-block;
     width: auto; }
@@ -136,33 +87,12 @@
       display: block;
       min-width: 62px;
       width: intrinsic; }
-    .post-type-archive-branding .branding-cat-nav ul li ul, .branding-term .branding-cat-nav ul li ul, .single-branding .branding-cat-nav ul li ul {
-      position: absolute;
-      top: 42px;
-      left: 0;
-      min-width: 150px;
-      z-index: 10; }
-      .post-type-archive-branding .branding-cat-nav ul li ul li, .branding-term .branding-cat-nav ul li ul li, .single-branding .branding-cat-nav ul li ul li {
-        width: 100%; }
-        .post-type-archive-branding .branding-cat-nav ul li ul li a, .branding-term .branding-cat-nav ul li ul li a, .single-branding .branding-cat-nav ul li ul li a {
-          width: 100%; }
   .post-type-archive-branding .branding-cat-nav ul .cat-parent, .branding-term .branding-cat-nav ul .cat-parent, .single-branding .branding-cat-nav ul .cat-parent {
     position: relative; }
-    .post-type-archive-branding .branding-cat-nav ul .cat-parent a::after, .branding-term .branding-cat-nav ul .cat-parent a::after, .single-branding .branding-cat-nav ul .cat-parent a::after {
-      position: relative;
-      top: 3px;
-      font-family: 'dashicons';
-      font-size: 16px;
-      line-height: 16px;
-      content: ' \f347'; }
   .post-type-archive-branding .content-area .secondary-title, .branding-term .content-area .secondary-title, .single-branding .content-area .secondary-title {
     padding-left: 7.6923%;
     padding-right: 7.6923%; }
   .post-type-archive-branding .content-area .branding-entries, .branding-term .content-area .branding-entries, .single-branding .content-area .branding-entries {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
     padding-left: 7.6923%;
     padding-right: 7.6923%; }
     .post-type-archive-branding .content-area .branding-entries .type-branding, .branding-term .content-area .branding-entries .type-branding, .single-branding .content-area .branding-entries .type-branding {
@@ -191,11 +121,3 @@
   .post-type-archive-branding .content-area .branding-entries:after, .branding-term .content-area .branding-entries:after, .single-branding .content-area .branding-entries:after {
     overflow: hidden;
     *zoom: 1; } }
-@media screen and (min-width: 695px) {
-  .post-type-archive-branding .content-area .page-header .page-title .dashicons, .branding-term .content-area .page-header .page-title .dashicons, .single-branding .content-area .page-header .page-title .dashicons {
-    position: relative;
-    display: inline;
-    top: 2px;
-    color: #888;
-    font-size: 26px;
-    padding: 0 15px; } }

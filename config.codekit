@@ -38,15 +38,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/ceoel_branding_term_walker.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/ceoel_branding_term_walker.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/config.rb": {
 		"fileType": 131072,
 		"ignore": 0,

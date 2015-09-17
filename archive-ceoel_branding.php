@@ -20,7 +20,7 @@
 
 			<header class="page-header">
 				
-				<h1 class="page-title"><?php echo displayPageTitle(); ?></h1>
+				<h1 class="page-title"><?php echo displayPageTitle() . ' Guidelines'; ?></h1>
 				<nav class="branding-cat-nav">
     				
     				<ul>
@@ -29,8 +29,6 @@
     				
 				</nav>
 			</header><!-- .page-header -->
-
-            <h2 class="secondary-title">Recent Work</h2>
             
             <div class="branding-entries">
 			<?php

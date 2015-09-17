@@ -1,14 +1,5 @@
 @import "compass/utilities/general/clearfix";
-@import "compass/css3/flexbox";
 @import "compass/css3/border-radius";
-
-.dashicons {
-    
-    font-size: 100%;
-    width: auto;
-    height: auto;
-    
-}
 
 /* CEOEL Branding */
 
@@ -31,79 +22,37 @@
                 width: 100%;
                 margin: 0 0 6px;
                 padding: 0;
+                border-right: 1px solid #ccc;
                 
                 a {
                     
                     display: block;
-                    width: 100%;
-                    padding: 10px 8px;
+                    padding: 0 6px 2px 3px;
                     font-size: 16px;
                     font-weight: normal;
                     line-height: normal;
-                    color: #fff;
-                    text-align: center;
-                    background-color: #333;
                     
                 }
+                                
+            }
+            
+            li:first-child {
                 
-                ul {
+                a {
                     
-                    @extend ul;
-                    display: none;
-                    width: 100%;
-                    
-                    li {
-                        
-                        margin: 0;
-                        
-                    }
+                    padding-left: 0;
                     
                 }
                 
             }
             
-            .cat-parent {
+            li:last-child {
                 
-                position: relative;
+                border-right: none;
                 
-                a::after {
+                a {
                     
-                    position: absolute;
-                    top: 5px;
-                    right: 3px;
-                    width: 32px;
-                    height: 32px;
-                    font-family: 'dashicons';
-                    font-size: 32px;
-                    line-height: 32px;
-                    color: #888;
-                    content: ' \f347';
-                    
-                }
-                
-                .open:after {
-                    
-                    content: ' \f343';
-                    
-                }
-                
-                ul {
-                    
-                    li {
-                        
-                        a {
-                            
-                            background-color: #888;
-                            
-                        }
-                        
-                        a::after {
-                            
-                            content: '';
-                            
-                        }
-                        
-                    }
+                    padding-right: 0;
                     
                 }
                 
@@ -113,42 +62,15 @@
                 
                 a {
                     
-                    
-                    background-color: #2f7dbd;
-                    
-                }
-                
-                a:after {
-                    
-                    color: #fff;
-                    
-                }
-                
-            }
-            
-            .current-cat-parent {
-                
-                @extend .current-cat;
-                
-                .current-cat {
-                    
-                        a {
-                        
-                        background-color: #2f7dbd;
-                        
-                    }
-                    
-                    a:after {
-                        
-                        color: #fff;
-                        
-                    }
+                    color: blue;
                     
                 }
                 
             }
             
         }
+        
+        .branding-view-all { }
         
     } // .branding-cat-nav
     
@@ -159,30 +81,6 @@
             .page-title {
                 
                 font-size: 28px;
-                
-                .dashicons {
-                    
-                    display: none;
-                    
-                    
-                }
-                
-            }
-            
-            .branding-view-all {
-                
-                padding: 5px 8px 5px 5px;
-                font-size: 14px;
-                color: #fff;
-                background-color: #333;
-                
-                .dashicons {
-                    
-                    display: inline;
-                    position: relative;
-                    top: 2px;
-                    
-                }
                 
             }
             
@@ -198,6 +96,7 @@
         .branding-entries {
             
             width: 100%;
+            
             .type-branding {
                 
                 padding-top: 0;
@@ -248,24 +147,6 @@
                 .entry-content {
                     
                     padding: 0 15px 0;
-                    
-                    p {
-                        
-                        iframe {
-                            
-                            margin-bottom: 0;
-                            
-                        }
-                        
-                    }
-                    
-                    iframe {
-                        
-                        width: 100%;
-                        vertical-align: middle;
-                        margin-bottom: 16px;
-                        
-                    }
                     
                 } // .entry-content
                 
@@ -377,45 +258,11 @@
                         
                     }
                     
-                    ul {
-                        
-                        position: absolute;
-                        top: 42px;
-                        left: 0;
-                        min-width: 150px;
-                        z-index: 10;
-                        
-                        li {
-                            
-                            width: 100%;
-                            
-                            a {
-                                
-                                width: 100%;
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                    
                 }
                 
                 .cat-parent {
                     
                     position: relative;
-                    
-                    a::after {
-                        
-                        position: relative;
-                        top: 3px;
-                        font-family: 'dashicons';
-                        font-size: 16px;
-                        line-height: 16px;
-                        content: ' \f347';
-                        
-                    }
                     
                 }
                 
@@ -434,8 +281,6 @@
             
             .branding-entries {
                 
-                @include display-flex( flex );
-                @include flex-wrap( wrap );
                 padding-left: 7.6923%;
                 padding-right: 7.6923%;
                 
@@ -515,34 +360,3 @@
     } // .post-type-archive-branding
     
 } // end tablet
-
-// misc fix
-@media screen and (min-width: 695px) {
-    .post-type-archive-branding {
-        
-        .content-area {
-            
-            .page-header {
-            
-                .page-title {
-                    
-                    .dashicons {
-                        
-                        position: relative;
-                        display: inline;
-                        top: 2px;
-                        color: #888;
-                        font-size: 26px;
-                        padding: 0 15px;
-                        
-                    }
-                    
-                }
-            
-            }
-                
-        }
-        
-    }
-    
-}

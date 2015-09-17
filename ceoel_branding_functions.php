@@ -3,8 +3,6 @@
     // exit if access directly
     if ( !defined( 'ABSPATH' ) ) exit;
     
-    require_once 'ceoel_branding_term_walker.php';
-    
     function get_branding_terms( $id, $taxonomy, $before = '', $sep = ', ', $after = '' ) {
         
         $terms = get_the_term_list( $id, $taxonomy, $before, $sep, $after );
@@ -25,11 +23,10 @@
             'orderby' => 'name',
             'show_count' => 0,
             'pad_counts' => 0,
-            'hierarchical' => 1,
+            'hierarchical' => 0,
             'hide_empty' => 1,
-            'taxonomy' => 'branding_category',
-            'title_li' => '',
-            'walker' => new Term_Nav_Walker()
+            'taxonomy' => 'branding_guideline',
+            'title_li' => ''
         ) );
         
     }

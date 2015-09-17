@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: UWEX CEOEL Branding
-Plugin URI: https://github.com/Lin87/media-showcase
+Plugin URI: https://github.com/oel-mediateam/ceoel-branding
 Description: A custom post type for branding documentation derived from Media Showcase code base.
 Version: 1.0.0
 Author: Ethan Lin
@@ -27,12 +27,12 @@ License: GPLv2
 // exit if access directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
-class CPT {
+class BrandingCPT {
     
     private $post_type = 'branding';
     private $plural = 'Brandings';
     private $singular = 'Branding';
-    private $slug = 'ceoel-branding';
+    private $slug = 'branding';
     private $menu_icon = 'dashicons-layout';
     private $style = 'css/ceoel_branding.css';
     private $customStyle = 'css/custom.css';
@@ -44,11 +44,11 @@ class CPT {
         
         array(
             
-            'taxonomy_name' => 'branding_category',
-            'singular' => 'Category',
-            'plural' => 'Categories',
-            'slug' => 'branding-categories',
-            'hierarchical' => true
+            'taxonomy_name' => 'branding_guideline',
+            'singular' => 'Guideline',
+            'plural' => 'Guidelines',
+            'slug' => 'guidelines',
+            'hierarchical' => false
             
         )
         
@@ -117,6 +117,7 @@ class CPT {
                     
                     'title',
                     'editor',
+                    'thumbnail',
                     'revisions'
                     
                 ),
@@ -276,10 +277,16 @@ class CPT {
     
     public function add_term_class( $classes ) {
         
-        if( is_tax() ) {
+        if( is_tax( 'branding_guideline' ) ) {
+            
             global $taxonomy;
-            if( !in_array( $taxonomy, $classes ) )
+            
+            if( !in_array( $taxonomy, $classes ) ) {
+                
                 $classes[] = 'branding-term';
+                
+            }
+                
         }
         return $classes;
         
@@ -298,6 +305,6 @@ class CPT {
     
 } // end class
 
-new CPT();
+new BrandingCPT();
 	
 ?>

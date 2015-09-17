@@ -22,11 +22,11 @@
     		
     		<header class="page-header">
     			
-    			<h1 class="page-title"><?php echo displayPageTitle(); ?></h1>
-    			<div><a class="branding-view-all" href="<?php echo get_post_type_archive_link( 'branding' ); ?>"><span class="dashicons dashicons-screenoptions"></span> View All</a></div>
+    			<h1 class="page-title"><?php echo displayPageTitle() . ' Guidelines'; ?></h1>
 				<nav class="branding-cat-nav">
     				
     				<ul>
+        				<li><a class="branding-view-all" href="<?php echo get_post_type_archive_link( 'branding' ); ?>">View All</a></li>
         				<?php displayTermNav(); ?>
                     </ul>
     				
@@ -55,7 +55,7 @@
             		?>
             		
             		<div class="entry-meta">
-                		<?php echo get_branding_terms( $post_ID, 'branding_category' ); ?>
+                		<?php echo get_branding_terms( $post_ID, 'branding_guideline' ); ?>
             		</div>
             		
             	</header>

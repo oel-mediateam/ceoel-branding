@@ -10,11 +10,11 @@
     
 }
 
-/* Media Showcase */
+/* CEOEL Branding */
 
-.post-type-archive-showcase {
+.post-type-archive-branding {
     
-    .showcase-cat-nav {
+    .branding-cat-nav {
         
         margin: 16px 0;
         
@@ -150,7 +150,7 @@
             
         }
         
-    } // .showcase-cat-nav
+    } // .branding-cat-nav
     
     .content-area {
         
@@ -169,7 +169,7 @@
                 
             }
             
-            .showcase-view-all {
+            .branding-view-all {
                 
                 padding: 5px 8px 5px 5px;
                 font-size: 14px;
@@ -195,10 +195,10 @@
             
         }
         
-        .showcase-entries {
+        .branding-entries {
             
             width: 100%;
-            .type-showcase {
+            .type-branding {
                 
                 padding-top: 0;
                 margin: 0 0 16px;
@@ -207,7 +207,7 @@
                     
                     padding: 15px;
                     
-                    .showcase-thumb {
+                    .branding-thumb {
                     
                         display: block;
                         width: 100%;
@@ -269,23 +269,23 @@
                     
                 } // .entry-content
                 
-            } // .type-showcase
+            } // .type-branding
             
-        } // .showcase-entries
+        } // .branding-entries
         
     }// .content-area
     
-} // .post-type-archive-showcase
+} // .post-type-archive-branding
 
-.showcase-term {
+.branding-term {
     
-    @extend .post-type-archive-showcase;
+    @extend .post-type-archive-branding;
     
 }
 
-.single-showcase {
+.single-branding {
     
-    @extend .post-type-archive-showcase;
+    @extend .post-type-archive-branding;
     
     .content-area {
         
@@ -342,66 +342,6 @@
                 
             }
             
-            .entry-footer {
-                
-                margin-top: 32px;
-                
-                .showcase-tag-list {
-                    
-                    position: relative;
-                    
-                    .showcase-tooltip {
-                    
-                        position: absolute;
-                        width: 250px;
-                        padding: 13px 15px 0;
-                        font-size: 12px;
-                        color: #fff;
-                        background-color: #2f7dbd;
-                        @include border-radius( 3px );
-                        z-index: 999;
-                        
-                        p:first-child {
-                            
-                            margin-bottom: 0;
-                            
-                        }
-                        
-                        p {
-                            
-                            margin-bottom: 15px;
-                            line-height: normal;
-                            
-                            small {
-                                
-                                font-size: 80%;
-                                line-height: 1;
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                    .showcase-tooltip:after {
-                    	bottom: 100%;
-                    	left: 50%;
-                    	border: solid transparent;
-                    	content: " ";
-                    	height: 0;
-                    	width: 0;
-                    	position: absolute;
-                    	pointer-events: none;
-                    	border-color: rgba(47, 125, 189, 0);
-                    	border-bottom-color: #2f7dbd;
-                    	border-width: 10px;
-                    	margin-left: -10px;
-                    }
-                    
-                }
-                               
-            }
-            
         }
         
         .hentry.has-post-thumbnail {
@@ -417,9 +357,9 @@
 // tablet
 @media screen and (min-width: 619px) {
     
-    .post-type-archive-showcase {
+    .post-type-archive-branding {
     
-        .showcase-cat-nav {
+        .branding-cat-nav {
             
             ul {
                 
@@ -481,7 +421,7 @@
                 
             }
             
-        } // .showcase-cat-nav
+        } // .branding-cat-nav
         
         .content-area {
             
@@ -492,14 +432,14 @@
                 
             }
             
-            .showcase-entries {
+            .branding-entries {
                 
                 @include display-flex( flex );
                 @include flex-wrap( wrap );
                 padding-left: 7.6923%;
                 padding-right: 7.6923%;
                 
-                .type-showcase {
+                .type-branding {
                     
                     width: 33.33%;
                     padding-top: 0;
@@ -510,7 +450,7 @@
                         
                         padding: 15px;
                         
-                        .showcase-thumb {
+                        .branding-thumb {
                         
                             display: block;
                             width: 100%;
@@ -537,9 +477,9 @@
                         
                     } // .entry-content
                     
-                } // .type-showcase
+                } // .type-branding
                 
-                .type-showcase:nth-child(n+4) {
+                .type-branding:nth-child(n+4) {
                     
                     width: 25%;
                     
@@ -562,9 +502,9 @@
                     
                 }
                 
-            } // .showcase-entries
+            } // .branding-entries
             
-            .showcase-entries:after {
+            .branding-entries:after {
                 
                 @include clearfix();
                 
@@ -572,13 +512,13 @@
             
         }// .content-area
         
-    } // .post-type-archive-showcase
+    } // .post-type-archive-branding
     
 } // end tablet
 
 // misc fix
 @media screen and (min-width: 695px) {
-    .post-type-archive-showcase {
+    .post-type-archive-branding {
         
         .content-area {
             

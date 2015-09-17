@@ -2,11 +2,11 @@
 
     /**
      * Template Name: Archive
-     * @package Media Showcase
+     * @package CEOEL Branding
      * @since 1.0.0
      */
     
-    require_once 'media_showcase_functions.php';
+    require_once 'ceoel_branding_functions.php';
     
     get_header();
     
@@ -20,8 +20,8 @@
 
 			<header class="page-header">
 				
-				<h1 class="page-title"><?php echo 'Media ' . displayPageTitle() . ' <span class="dashicons dashicons-video-alt3"></span> <span class="dashicons dashicons-format-audio"></span> <span class="dashicons dashicons-format-image"></span> <span class="dashicons dashicons-video-alt2"></span> <span class="dashicons dashicons-admin-customizer"></span>'; ?></h1>
-				<nav class="showcase-cat-nav">
+				<h1 class="page-title"><?php echo displayPageTitle(); ?></h1>
+				<nav class="branding-cat-nav">
     				
     				<ul>
         				<?php displayTermNav(); ?>
@@ -32,32 +32,12 @@
 
             <h2 class="secondary-title">Recent Work</h2>
             
-            <div class="showcase-entries">
+            <div class="branding-entries">
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post(); ?>
         
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    
-                    <div class="entry-thumb">
-                        <?php
-                            
-                            if ( has_post_thumbnail() ) {
-                                
-                        ?>
-
-                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'full', array( 'class' => 'showcase-thumb' ) ); ?></a>
-	
-                        <?php
-                                
-                            } else {
-                                
-                                echo displayDefaultThumb();
-                                
-                            }
-                                
-                        ?>
-                    </div>
                     
                 	<header class="entry-header">
                     	
@@ -84,11 +64,11 @@
                 			the_excerpt();
                 
                 			wp_link_pages( array(
-                				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'showcase' ) . '</span>',
+                				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'branding' ) . '</span>',
                 				'after'       => '</div>',
                 				'link_before' => '<span>',
                 				'link_after'  => '</span>',
-                				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'showcase' ) . ' </span>%',
+                				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'branding' ) . ' </span>%',
                 				'separator'   => '<span class="screen-reader-text">, </span>',
                 			) );
                 			
@@ -106,9 +86,9 @@
 			
 			// Previous/next page navigation.
 			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous', 'showcase' ),
-				'next_text'          => __( 'Next', 'showcase' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'showcase' ) . ' </span>',
+				'prev_text'          => __( 'Previous', 'branding' ),
+				'next_text'          => __( 'Next', 'branding' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'branding' ) . ' </span>',
 			) );
 
 		// If no content, include the "No posts found" template.

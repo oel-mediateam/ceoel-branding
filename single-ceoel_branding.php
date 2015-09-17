@@ -2,12 +2,12 @@
 
     /**
      * Template Name: Single
-     * @package Media Showcase
+     * @package CEOEL Branding
      * @since 1.0.0
      */
     
     // includes
-    require_once 'media_showcase_functions.php';
+    require_once 'ceoel_branding_functions.php';
     
     $post_ID = get_the_ID();
     
@@ -22,9 +22,9 @@
     		
     		<header class="page-header">
     			
-    			<h1 class="page-title"><?php echo 'Media ' . displayPageTitle() . ' <span class="dashicons dashicons-video-alt3"></span> <span class="dashicons dashicons-format-audio"></span> <span class="dashicons dashicons-format-image"></span> <span class="dashicons dashicons-video-alt2"></span> <span class="dashicons dashicons-admin-customizer"></span>'; ?></h1>
-    			<div><a class="showcase-view-all" href="<?php echo get_post_type_archive_link( 'showcase' ); ?>"><span class="dashicons dashicons-screenoptions"></span> View All</a></div>
-				<nav class="showcase-cat-nav">
+    			<h1 class="page-title"><?php echo displayPageTitle(); ?></h1>
+    			<div><a class="branding-view-all" href="<?php echo get_post_type_archive_link( 'branding' ); ?>"><span class="dashicons dashicons-screenoptions"></span> View All</a></div>
+				<nav class="branding-cat-nav">
     				
     				<ul>
         				<?php displayTermNav(); ?>
@@ -37,12 +37,11 @@
         
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             
-<!--             	<header class="entry-header"> -->
+            	<header class="entry-header">
                 	
             		<?php
                 		
                 		// get the title
-/*
             			if ( is_single() ) {
                 			
                 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -52,40 +51,37 @@
                 			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
                 			
             			}
-*/
 
             		?>
             		
-<!--             		<div class="entry-meta"> -->
-                		<?php /* echo get_showcase_terms( $post_ID, 'media_types' ); */ ?>
-<!--             		</div> -->
+            		<div class="entry-meta">
+                		<?php echo get_branding_terms( $post_ID, 'branding_category' ); ?>
+            		</div>
             		
-<!--             	</header> -->
+            	</header>
             
             	<div class="entry-content">
             		<?php
             			/* translators: %s: Name of current post */
             			the_content( sprintf(
-            				__( 'Continue reading %s', 'showcase' ),
+            				__( 'Continue reading %s', 'branding' ),
             				the_title( '<span class="screen-reader-text">', '</span>', false )
             			) );
             
             			wp_link_pages( array(
-            				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'showcase' ) . '</span>',
+            				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'branding' ) . '</span>',
             				'after'       => '</div>',
             				'link_before' => '<span>',
             				'link_after'  => '</span>',
-            				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'showcase' ) . ' </span>%',
+            				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'branding' ) . ' </span>%',
             				'separator'   => '<span class="screen-reader-text">, </span>',
             			) );
             			
-//             			edit_post_link( __( 'Edit', 'showcase' ), '<span class="edit-link">', '</span>' );
             		?>
             	</div><!-- .entry-content -->
             
             	<footer class="entry-footer">
-                    <?php echo get_showcase_terms( $post_ID, 'participants', '<strong>Participants:</strong> ' ); ?><br />
-                    <?php echo get_showcase_tags( $post_ID, 'showcase_tags'); ?>
+                    <?php edit_post_link( __( 'Edit', 'branding' ), '<span class="edit-link">', '</span>' ); ?>
             	</footer><!-- .entry-footer -->
             
             </article>

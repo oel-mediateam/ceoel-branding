@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Media Showcase
+Plugin Name: UWEX CEOEL Branding
 Plugin URI: https://github.com/Lin87/media-showcase
-Description: A portfolio plugin to showcase your multiple media type projects.
+Description: A custom post type for branding documentation derived from Media Showcase code base.
 Version: 1.0.0
 Author: Ethan Lin
 Author URI: http://www.ethanslin.com
@@ -29,46 +29,26 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 class CPT {
     
-    private $post_type = 'showcase';
-    private $plural = 'Showcases';
-    private $singular = 'Showcase';
-    private $slug = 'media-showcase';
-    private $menu_icon = 'dashicons-heart';
-    private $style = 'css/media_showcase.css';
+    private $post_type = 'branding';
+    private $plural = 'Brandings';
+    private $singular = 'Branding';
+    private $slug = 'ceoel-branding';
+    private $menu_icon = 'dashicons-layout';
+    private $style = 'css/ceoel_branding.css';
     private $customStyle = 'css/custom.css';
-    private $script = 'scripts/media_showcase.js';
-    private $single_template = 'single-media_showcase.php';
-    private $archive_template = 'archive-media_showcase.php';
-    private $term_template = 'archive-media_showcase_term.php';
+    private $script = 'scripts/ceoel_branding.js';
+    private $single_template = 'single-ceoel_branding.php';
+    private $archive_template = 'archive-ceoel_branding.php';
+    private $term_template = 'archive-ceoel_branding_term.php';
     private $taxonomies = array(
         
         array(
             
-            'taxonomy_name' => 'media_types',
-            'singular' => 'Media Type',
-            'plural' => 'Media Types',
-            'slug' => 'media-types',
+            'taxonomy_name' => 'branding_category',
+            'singular' => 'Category',
+            'plural' => 'Categories',
+            'slug' => 'branding-categories',
             'hierarchical' => true
-            
-        ),
-        
-        array(
-            
-            'taxonomy_name' => 'participants',
-            'singular' => 'Participant',
-            'plural' => 'Participants',
-            'slug' => 'participants',
-            'hierarchical' => true
-            
-        ),
-        
-        array(
-            
-            'taxonomy_name' => 'showcase_tags',
-            'singular' => 'Tag',
-            'plural' => 'Tags',
-            'slug' => 'showcase-tags',
-            'hierarchical' => false
             
         )
         
@@ -88,16 +68,8 @@ class CPT {
         // add single view template
         $this->add_filter( 'template_include', array( &$this, 'include_templates' ), 1 );
         
-        // add post excerpt length
-        $this->add_filter( 'excerpt_length', array( &$this, 'set_excerpt_length' ), 999 );
-        
-        // set post excerpt more text
-        $this->add_filter( 'excerpt_more', array( &$this, 'set_excerpt_more' ), 15 );
-        
         // set post excerpt more text
         $this->add_filter( 'body_class', array( &$this, 'add_term_class' ) );
-        
-        add_shortcode( 'title_cat' , array( &$this, 'show_title_cat' ));
         
         // on activation
         register_activation_hook( __FILE__, array( &$this, 'flush_rewrite') );
@@ -145,8 +117,6 @@ class CPT {
                     
                     'title',
                     'editor',
-                    'thumbnail',
-                    'excerpt',
                     'revisions'
                     
                 ),
@@ -304,42 +274,14 @@ class CPT {
         
     }
     
-    public function set_excerpt_length( $length ) {
-        
-        return 15;
-        
-    }
-    
-    public function set_excerpt_more( $more ) {
-        
-        return ' ... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '"> View <span class="dashicons dashicons-arrow-right-alt"></span></a>';
-        
-    }
-    
     public function add_term_class( $classes ) {
         
         if( is_tax() ) {
             global $taxonomy;
             if( !in_array( $taxonomy, $classes ) )
-                $classes[] = 'showcase-term';
+                $classes[] = 'branding-term';
         }
         return $classes;
-        
-    }
-    
-    public function show_title_cat( $att ) {
-        
-        $post_ID = get_the_ID();
-        $content = '';
-        
-        if ( is_single() ) {
-                			
-			$content .= '<h1 class="entry-title">' . get_the_title() . '</h1>';
-			$content .= '<div class="entry-meta">' . get_showcase_terms( $post_ID, 'media_types' ) . '</div>';
-			
-		}
-		
-		return $content;
         
     }
     

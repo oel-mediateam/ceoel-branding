@@ -1,6 +1,6 @@
 jQuery( document ).ready( function() {
     
-    var items = jQuery( '.showcase-cat-nav ul li.cat-parent a' ).not( jQuery( 'ul.children li a' ) );
+    var items = jQuery( '.branding-cat-nav ul li.cat-parent a' ).not( jQuery( 'ul.children li a' ) );
     
     items.each( function() {
         
@@ -10,12 +10,6 @@ jQuery( document ).ready( function() {
     
     jQuery.fn.mobileNavClick( items );
     jQuery.fn.navHover( items );
-    
-    if ( jQuery( '.showcase-tags' ).length ) {
-        
-        jQuery.fn.showcaseTooltip();
-        
-    }
     
 } );
 
@@ -96,35 +90,5 @@ jQuery.fn.mobileNavClick = function( items ) {
         }
         
     } );   
-    
-};
-
-jQuery.fn.showcaseTooltip = function() {
-    
-    jQuery( '.showcase-tags' ).on( 'mouseover', function() {
-        
-        if ( jQuery( window ).width() >= 955 ) {
-            
-            var pos = jQuery( this ).position();
-            var top = Math.floor( pos.top + 32 );
-            var left = Math.floor( pos.left - 125 + ( jQuery( this ).width() / 2 ) );
-            
-            jQuery( this ).after( '<div class="showcase-tooltip" style="display:none; top: ' + top + 'px; left: ' + left + 'px;">' + '<p><strong>' + jQuery( this ).html() + '</strong></p><p>' + jQuery( this ).attr( 'data-desc' ) + '</p><p><small>Click this tag to see more showcase items like it.</small></p></div>' );
-            
-            jQuery( '.showcase-tooltip' ).fadeIn( 'fast' );
-        
-            jQuery( this ).on( 'mouseleave', function() {
-                
-                jQuery( '.showcase-tooltip' ).fadeOut( 'fast', function() {
-                    
-                    jQuery( this ).remove();
-                    
-                } );
-                
-            } );
-
-        }
-                
-    } );
     
 };

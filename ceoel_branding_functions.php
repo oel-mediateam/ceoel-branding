@@ -20,7 +20,8 @@
     function displayTermNav() {
         
         wp_list_categories( array(
-            'orderby' => 'name',
+            'orderby' => 'id',
+            'order' => 'ASC',
             'show_count' => 0,
             'pad_counts' => 0,
             'hierarchical' => 0,

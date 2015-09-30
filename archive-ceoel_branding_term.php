@@ -12,8 +12,7 @@
     
 ?>
 
-    <section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <main class="content full-width" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -30,60 +29,40 @@
 				</nav>
 				
 			</header><!-- .page-header -->
-            
-            <h2 class="secondary-title"><?php echo single_term_title( '', false ); ?></h2>
-            
-             <div class="branding-entries">
+            <article >
+            <div class="branding-entries">
+                
+                <h2 class="branding_term_title"><?php echo single_term_title( '', false ); ?></h2>
+                
+                <ul class="branding_items_wrapper">
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post(); ?>
-        
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                
+                
+                <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     
-                	<header class="entry-header">
+                	<?php
                     	
-                		<?php
+                    	if ( has_post_thumbnail() ) {
+                            		
+                    		echo '<a href="' . get_permalink() . '" title="' . esc_attr( get_the_title() ) . '">' . get_the_post_thumbnail( $posts->ID, 'full', array( 'class' => 'brand-thumb' ) ) . '</a>';
                     		
-                    		// get the title
-                			if ( is_single() ) {
-                    			
-                    			the_title( '<h3 class="entry-title">', '</h3>' );
-                    			
-                			} else {
-                    			
-                    			the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
-                    			
-                			}
-                			
-                		?>
-                		
-                	</header>
-                
-                	<div class="entry-content">
-                		<?php
+                		} else {
                     		
-                			the_excerpt();
-                
-                			wp_link_pages( array(
-                				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'branding' ) . '</span>',
-                				'after'       => '</div>',
-                				'link_before' => '<span>',
-                				'link_after'  => '</span>',
-                				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'branding' ) . ' </span>%',
-                				'separator'   => '<span class="screen-reader-text">, </span>',
-                			) );
-                			
-                		?>
-                	</div><!-- .entry-content -->
-                
-<!--                 	<footer class="entry-footer"></footer> --><!-- .entry-footer -->
-                
-                </article>
-        			
-        <?php
-
-			// End the loop.
-			endwhile;
+                    		echo '<a href="'.get_permalink().'">' . get_the_title() . '</a>';
+                    		
+                		}
+                    	
+                    ?>
+                    
+                	</li>
+                				
+        <?php endwhile; ?>
+        
+			</ul>
+			
+			<?php
 			
 			// Previous/next page navigation.
 			the_posts_pagination( array(
@@ -100,8 +79,9 @@
 		endif;
 		?>
         </div>
+        <article >
 
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+    </main><!-- .site-main -->
+
     
     <?php get_footer(); ?>

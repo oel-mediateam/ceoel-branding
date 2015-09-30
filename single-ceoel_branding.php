@@ -15,23 +15,24 @@
     
     
 ?>
-
-    <div id="primary" class="content-area">
-        
-		<main id="main" class="site-main" role="main">
-    		
-    		<header class="page-header">
+        <header class="page-header">
     			
-    			<h1 class="page-title"><?php echo displayPageTitle() . ' Guidelines'; ?></h1>
-				<nav class="branding-cat-nav">
-    				
-    				<ul>
-        				<li><a class="branding-view-all" href="<?php echo get_post_type_archive_link( 'branding' ); ?>">View All</a></li>
-        				<?php displayTermNav(); ?>
-                    </ul>
-    				
-				</nav>
-			</header><!-- .page-header -->
+            <h1 class="page-title"><?php echo displayPageTitle() . ' Guidelines'; ?></h1>
+			<nav class="branding-cat-nav">
+				
+				<ul>
+    				<li><a class="branding-view-all" href="<?php echo get_post_type_archive_link( 'branding' ); ?>">View All</a></li>
+    				<?php displayTermNav(); ?>
+                </ul>
+				
+			</nav>
+			
+		</header><!-- .page-header -->
+        
+        <div class="content-side-bar-wrap">
+		<main class="content" role="main">
+			
+			<?php genesis_breadcrumb(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
         
@@ -53,10 +54,6 @@
             			}
 
             		?>
-            		
-            		<div class="entry-meta">
-                		<?php echo get_branding_terms( $post_ID, 'branding_guideline' ); ?>
-            		</div>
             		
             	</header>
             
@@ -98,7 +95,68 @@
 		?>
 
 		</main>
-		
-	</div>
+		<aside class="sidebar sidebar-primary widget-area" role="complementary">
+    		
+    		<?php
+        		
+        		$arg = array(
+                        
+                    'orderby' => 'id',
+                    'hide_empty' => 1,
+                    'hierarchical' => 0,
+                    
+                );
+                $terms = get_terms( 'branding_guideline', $arg );
+                
+                foreach( $terms as $cat ) {
+                    
+                    echo '<section class="widget">';
+                    echo '<div class="widget-wrap">';
+                    echo '<h4 class="widget-title widgettitle">' .$cat->name . '</h4>' ;
+                    
+                    $posts = new WP_Query( array(
+                        
+                        'post_type' => 'branding',
+                        'post_status' => 'publish',
+                        'orderby' => 'id',
+                        'order' => 'ASC',
+                        'nopaging' => true,
+                        'tax_query' => array(
+                            
+                            array(
+                                
+                                'taxonomy' => 'branding_guideline',
+                                'field' => 'term_id',
+                                'terms' => $cat->term_taxonomy_id
+                                
+                            )
+                            
+                        )
+                        
+                    ) );
+                    
+                    if ( $posts->have_posts() ) {
+                    	echo '<ul class="menu">';
+                    	while ( $posts->have_posts() ) {
+                    		$posts->the_post();
+                        		
+                    		echo '<li><a href="'.get_permalink($posts->ID).'">' . get_the_title() . '</a></li>';
+                    		
+                    	}
+                    	echo '</ul>';
+                    	
+                    }
+                    
+                    echo '<div class="widget-wrap">';
+                    echo '</section>';
+                    
+                    wp_reset_postdata();
+                    
+                }
+        		
+            ?>
+    		
+		</aside>
+        </div>
 
 <?php get_footer(); ?>

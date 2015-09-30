@@ -1,164 +1,191 @@
 @import "compass/utilities/general/clearfix";
-@import "compass/css3/border-radius";
 
 /* CEOEL Branding */
 
 .post-type-archive-branding {
     
-    .branding-cat-nav {
+    .content {
         
-        margin: 16px 0;
-        
-        ul {
-            
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            
-            li {
-                
-                position: relative;
-                display: block;
-                width: 100%;
-                margin: 0 0 6px;
-                padding: 0;
-                border-right: 1px solid #ccc;
-                
-                a {
-                    
-                    display: block;
-                    padding: 0 6px 2px 3px;
-                    font-size: 16px;
-                    font-weight: normal;
-                    line-height: normal;
-                    
-                }
-                                
-            }
-            
-            li:first-child {
-                
-                a {
-                    
-                    padding-left: 0;
-                    
-                }
-                
-            }
-            
-            li:last-child {
-                
-                border-right: none;
-                
-                a {
-                    
-                    padding-right: 0;
-                    
-                }
-                
-            }
-            
-            .current-cat {
-                
-                a {
-                    
-                    color: blue;
-                    
-                }
-                
-            }
-            
-        }
-        
-        .branding-view-all { }
-        
-    } // .branding-cat-nav
-    
-    .content-area {
+        min-height: 0;
+        padding-top: 10px;
+        padding-top: 1rem;
         
         .page-header {
             
+            width: 100%;
+            border-bottom: 1px solid #e7e7e7;
+            border-bottom: .1rem solid #e7e7e7;
+            margin-bottom: 16px;
+            margin-bottom: 1.6rem;
+            
             .page-title {
                 
-                font-size: 28px;
+                font-size: 32px;
+                font-size: 3.2rem;
+                color: #4d4d4d;
+                font-weight: 700;
                 
             }
             
-        }
-        
-        .secondary-title {
-            
-            padding: 15px;
-            font-size: 24px;
-            
-        }
-        
-        .branding-entries {
-            
-            width: 100%;
-            
-            .type-branding {
+            .branding-cat-nav {
                 
-                padding-top: 0;
-                margin: 0 0 16px;
+                margin-top: 16px;
+                margin-top: 1.6rem;
                 
-                .entry-thumb {
+                ul {
                     
-                    padding: 15px;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
                     
-                    .branding-thumb {
-                    
-                        display: block;
-                        width: 100%;
-                        height: 100%;
+                    li {
                         
-                    }
-                    
-                } // .entry-thumb
-                
-                .entry-header {
-                    
-                    padding: 0 15px;
-                    
-                    .entry-title {
-                        
-                        font-size: 20px;
-                        margin-bottom: 5px;
-                        
-                    }
-                    
-                    .entry-meta {
-                    
-                        color: #888;
-                        font-size: 14px;
-                        margin: 5px 0 32px;
+                        position: relative;
+                        display: inline-block;
+                        margin: 0 0 6px;
+                        margin: 0 0 .6rem;
+                        padding: 0;
+                        border-right: 1px solid #e7e7e7;
+                        border-right: .1rem solid #e7e7e7;
                         
                         a {
                             
+                            display: block;
+                            padding: 0 6px 2px 3px;
+                            padding: 0 .6rem .2rem .3rem;
                             font-size: 14px;
-                            color: #888;
+                            font-size: 1.4rem;
+                            color: #666;
+                            font-weight: normal;
+                            line-height: normal;
+                            
+                        }
+                                        
+                    }
+                    
+                    li:first-child {
+                        
+                        a {
+                            
+                            padding-left: 0;
                             
                         }
                         
                     }
                     
-                } // .entry-header
-                
-                .entry-content {
+                    li:last-child {
+                        
+                        border-right: none;
+                        
+                        a {
+                            
+                            padding-right: 0;
+                            
+                        }
+                        
+                    }
                     
-                    padding: 0 15px 0;
+                    .current-cat {
+                        
+                        a {
+                            
+                            color: blue;
+                            
+                        }
+                        
+                    }
                     
-                } // .entry-content
+                }
                 
-            } // .type-branding
+            } // .branding-cat-nav
+            
+        } // .page-header
+        
+        .branding-entries {
+            
+            .branding_term_title {
+                
+                background-color: #e7e7e7;
+                color: #666;
+                font-size: 24px;
+                font-size: 2.4rem;
+                font-weight: normal;
+                padding: 2px 16px 4px;
+                padding: .2rem 1.6rem .4rem;
+                margin: 16px 0 0;
+                margin: 1.6rem 0 0;
+                
+            }
+            
+            .branding_items_wrapper {
+                
+                width: 100%;
+                list-style: none;
+                padding: 0 16px;
+                padding: 0 1.6rem;
+                margin: 16px 0;
+                margin: 1.6rem 0;
+                float: none;
+                clear: both;
+                
+                li {
+                    
+                    width: 50%;
+                    padding: 5px;
+                    padding: .5rem;
+                    margin: 0;
+                    float: left;
+                    
+                    a {
+                        
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        color: #fff;
+                        text-align: center;
+                        background-color: #83B5B7;
+                        
+                        .brand-thumb {
+                            
+                            width: 100%;
+                            height: auto;
+                            
+                        }
+                        
+                    }
+                    
+                    a:hover {
+                        
+                        background-color: #003DA6;
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            .branding_items_wrapper:after {
+                
+                clear: both;
+                content: " ";
+                display: table;
+                
+            }
             
         } // .branding-entries
         
-    }// .content-area
+    } // .content
+    
+    .full-width {
+        
+        width: 100%;
+        
+    }
     
 } // .post-type-archive-branding
 
-.branding-term {
+
+.tax-branding_guideline {
     
     @extend .post-type-archive-branding;
     
@@ -166,103 +193,81 @@
 
 .single-branding {
     
-    @extend .post-type-archive-branding;
-    
-    .content-area {
+    .page-header {
+            
+        width: 100%;
+        border-bottom: 1px solid #e7e7e7;
+        border-bottom: .1rem solid #e7e7e7;
+        padding: 0 30px 16px;
+        padding: 0 3rem 1.6rem;
+        margin: 0;
+        background-color: #fff;
         
-        .hentry {
+        .page-title {
             
-            .entry-header {
-                
-                
-                .entry-title {
-                    
-                    margin-bottom: 0;
-                    
-                }
-                
-                .entry-meta {
-                    
-                    font-size: 14px;
-                    margin-bottom: 32px;
-                    color: #888;
-                    
-                    a {
-                        
-                        color: #888;
-                        
-                    }
-                    
-                }
-                
-            }
-            
-            .entry-content {
-                
-                .entry-title {
-                        
-                    margin: 16px 0 0;
-                    line-height: normal;
-                    
-                }
-                
-                .entry-meta {
-                
-                    color: #888;
-                    font-size: 14px;
-                    margin: 0 0 32px;
-                    
-                    a {
-                        
-                        font-size: 14px;
-                        color: #888;
-                        
-                    }
-                    
-                }
-                
-            }
+            margin: 0;
+            font-size: 32px;
+            font-size: 3.2rem;
+            color: #4d4d4d;
+            font-weight: 700;
             
         }
         
-        .hentry.has-post-thumbnail {
-                
-            padding-top: 48px;
-            
-        }
-        
-    }
-    
-}
-
-// tablet
-@media screen and (min-width: 619px) {
-    
-    .post-type-archive-branding {
-    
         .branding-cat-nav {
             
+            margin-top: 16px;
+            margin-top: 1.6rem;
+            
             ul {
+                
+                margin: 0;
+                padding: 0;
+                list-style: none;
                 
                 li {
                     
                     position: relative;
                     display: inline-block;
-                    width: auto;
+                    margin: 0 0 6px;
+                    margin: 0 0 .6rem;
+                    padding: 0;
+                    border-right: 1px solid #e7e7e7;
+                    border-right: .1rem solid #e7e7e7;
                     
                     a {
                         
                         display: block;
-                        min-width: 62px;
-                        width: intrinsic;
+                        padding: 0 6px 2px 3px;
+                        padding: 0 .6rem .2rem .3rem;
+                        font-size: 14px;
+                        font-size: 1.4rem;
+                        color: #666;
+                        font-weight: normal;
+                        line-height: normal;
+                        
+                    }
+                                    
+                }
+                
+                li:first-child {
+                    
+                    a {
+                        
+                        padding-left: 0;
                         
                     }
                     
                 }
                 
-                .cat-parent {
+                li:last-child {
                     
-                    position: relative;
+                    border-right: none;
+                    
+                    a {
+                        
+                        padding-right: 0;
+                        
+                    }
                     
                 }
                 
@@ -270,93 +275,204 @@
             
         } // .branding-cat-nav
         
-        .content-area {
+    } // .page-header
+    
+}
+
+// tablet & up
+@media screen and (min-width: 768px) {
+    
+    .post-type-archive-branding {
+    
+        .content {
             
-            .secondary-title {
+            .page-header {
+                
+                clear: both;
+                
+                .page-title {
+                    
+                    width: 50%;
+                    float: left;
+                    
+                }
+                
+                .branding-cat-nav {
+                    
+                    width: 50%;
+                    float: left;
+                    
+                } // .branding-cat-nav
+                
+            } // .page-header
             
-                padding-left: 7.6923%;
-                padding-right: 7.6923%;
+            .page-header:after {
+                
+                clear: both;
+                content: " ";
+                display: table;
+                
+            }
+            
+            .breadcrumb {
+                
+                float: none;
+                clear: both;
                 
             }
             
             .branding-entries {
                 
-                padding-left: 7.6923%;
-                padding-right: 7.6923%;
-                
-                .type-branding {
+                .branding_items_wrapper {
                     
-                    width: 33.33%;
-                    padding-top: 0;
-                    margin: 0 0 16px;
-                    float: left;
+                    float: none;
+                    clear: both;
                     
-                    .entry-thumb {
+                    li {
                         
-                        padding: 15px;
+                        width: 20%;
+                        float: left;
                         
-                        .branding-thumb {
-                        
-                            display: block;
-                            width: 100%;
-                            height: 100%;
-                            
-                        }
-                        
-                    } // .entry-thumb
-                    
-                    .entry-header {
-                        
-                        .entry-title {
-                            
-                            font-size: 20px;
-                            
-                        }
-                        
-                    } // .entry-header
-                    
-                    .entry-content {
-                        
-                        font-size: 14px;
-                        line-height: 18px;
-                        
-                    } // .entry-content
-                    
-                } // .type-branding
-                
-                .type-branding:nth-child(n+4) {
-                    
-                    width: 25%;
-                    
-                    .entry-header {
-                        
-                        .entry-title {
-                            
-                            font-size: 18px;
-                            
-                        }
-                        
-                    } // .entry-header
-                    
-                    .entry-content {
-                        
-                        font-size: 12px;
-                        line-height: 16px;
-                        
-                    } // .entry-content
+                    }
                     
                 }
                 
             } // .branding-entries
             
-            .branding-entries:after {
-                
-                @include clearfix();
-                
-            }
-            
-        }// .content-area
+        } // .content
         
     } // .post-type-archive-branding
     
+    .single-branding {
+    
+        .page-header {
+            
+            .page-title {
+                
+                width: 50%;
+                float: left;
+                
+            }
+            
+            .branding-cat-nav {
+                
+                width: 50%;
+                float: left;
+                
+            } // .branding-cat-nav
+            
+        } // .page-header
+        
+        .page-header:after {
+            
+            clear: both;
+            content: " ";
+            display: table;
+            
+        }
+        
+    }
+    
 } // end tablet
+
+// desktop
+@media screen and (min-width: 1025px) {
+    
+    .post-type-archive-branding {
+    
+        .content {
+            
+            .page-header {
+                
+                .page-title {
+                    
+                    width: 40%;
+                    
+                }
+                
+                .branding-cat-nav {
+                    
+                    width: 60%;
+                    
+                } // .branding-cat-nav
+                
+            } // .page-header
+            
+        }
+            
+    }
+    
+    .single-branding {
+    
+        .page-header {
+            
+            .page-title {
+                
+                width: 40%;
+                float: left;
+                
+            }
+            
+            .branding-cat-nav {
+                
+                width: 60%;
+                float: left;
+                
+            } // .branding-cat-nav
+            
+        } // .page-header
+        
+    }
+
+}
+
+// big desktop
+@media screen and (min-width: 1201px) {
+    
+    .post-type-archive-branding {
+    
+        .content {
+            
+            .page-header {
+                
+                .page-title {
+                    
+                    width: 33%;
+                    
+                }
+                
+                .branding-cat-nav {
+                    
+                    width: 67%;
+                    
+                } // .branding-cat-nav
+                
+            } // .page-header
+            
+        }
+            
+    }
+    
+    .single-branding {
+    
+        .page-header {
+            
+            .page-title {
+                
+                width: 33%;
+                float: left;
+                
+            }
+            
+            .branding-cat-nav {
+                
+                width: 67%;
+                float: left;
+                
+            } // .branding-cat-nav
+            
+        } // .page-header
+        
+    }
+
+}

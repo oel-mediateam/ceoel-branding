@@ -32,10 +32,9 @@ class BrandingCPT {
     private $post_type = 'branding';
     private $plural = 'Brandings';
     private $singular = 'Branding';
-    private $slug = 'branding';
+    private $slug = 'brandings';
     private $menu_icon = 'dashicons-layout';
     private $style = 'css/ceoel_branding.css';
-    private $customStyle = 'css/custom.css';
     private $script = 'scripts/ceoel_branding.js';
     private $single_template = 'single-ceoel_branding.php';
     private $archive_template = 'archive-ceoel_branding.php';
@@ -67,9 +66,6 @@ class BrandingCPT {
         
         // add single view template
         $this->add_filter( 'template_include', array( &$this, 'include_templates' ), 1 );
-        
-        // set post excerpt more text
-        $this->add_filter( 'body_class', array( &$this, 'add_term_class' ) );
         
         // on activation
         register_activation_hook( __FILE__, array( &$this, 'flush_rewrite') );
@@ -242,9 +238,7 @@ class BrandingCPT {
     
     public function include_styles_scripts() {
         
-        wp_enqueue_style( 'dashicons' );
         wp_enqueue_style( $this->post_type, plugins_url( $this->style, __FILE__ ) );
-        wp_enqueue_style( $this->post_type . '-custom', plugins_url( $this->customStyle, __FILE__ ) );
         
         // add scripts
 		wp_enqueue_script( $this->post_type, plugins_url( $this->script, __FILE__ ) );
@@ -272,23 +266,6 @@ class BrandingCPT {
         }
         
         return $path;
-        
-    }
-    
-    public function add_term_class( $classes ) {
-        
-        if( is_tax( 'branding_guideline' ) ) {
-            
-            global $taxonomy;
-            
-            if( !in_array( $taxonomy, $classes ) ) {
-                
-                $classes[] = 'branding-term';
-                
-            }
-                
-        }
-        return $classes;
         
     }
     

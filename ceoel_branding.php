@@ -35,7 +35,7 @@ class BrandingCPT {
     private $slug = 'brandings';
     private $menu_icon = 'dashicons-layout';
     private $style = 'css/ceoel_branding.css';
-    private $script = 'scripts/ceoel_branding.js';
+    //private $script = 'scripts/ceoel_branding.js';
     private $single_template = 'single-ceoel_branding.php';
     private $archive_template = 'archive-ceoel_branding.php';
     private $term_template = 'archive-ceoel_branding_term.php';
@@ -241,7 +241,7 @@ class BrandingCPT {
         wp_enqueue_style( $this->post_type, plugins_url( $this->style, __FILE__ ) );
         
         // add scripts
-		wp_enqueue_script( $this->post_type, plugins_url( $this->script, __FILE__ ) );
+		// wp_enqueue_script( $this->post_type, plugins_url( $this->script, __FILE__ ) );
         
     }
     

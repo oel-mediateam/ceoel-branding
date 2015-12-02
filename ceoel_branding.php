@@ -30,9 +30,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 class BrandingCPT {
     
     private $post_type = 'branding';
-    private $plural = 'Brandings';
+    private $plural = 'Branding';
     private $singular = 'Branding';
-    private $slug = 'brandings';
+    private $slug = 'branding';
     private $menu_icon = 'dashicons-layout';
     private $style = 'css/ceoel_branding.css';
     //private $script = 'scripts/ceoel_branding.js';

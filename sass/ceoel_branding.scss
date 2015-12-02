@@ -1,3 +1,4 @@
+@import "compass/css3/border-radius";
 @import "compass/utilities/general/clearfix";
 
 /* CEOEL Branding */
@@ -276,6 +277,102 @@
         } // .branding-cat-nav
         
     } // .page-header
+    
+    .content {
+        
+        .type-branding {
+            
+            .entry-content {
+                
+                img {
+                    
+                    margin-bottom: 0;
+                    
+                }
+                
+                .callout {
+                    
+                    padding: 20px;
+                    padding: 2rem;
+                    margin: 0 0 15px;
+                    margin: 0 0 1.5rem;
+                    border: 1px solid #eee;
+                    border-left-width: 5px;
+                    border-left-width: .5rem;
+                    @include border-radius( 3px );
+                    @include border-radius( .3rem );
+                    
+                    h4 {
+                        
+                        margin-top: 0;
+                        margin-bottom: 5px;
+                        margin-bottom: .5rem;
+                        font-size: 14px;
+                        font-size: 1.4rem;
+                        
+                    }
+                    
+                    p:last-child {
+                        
+                        margin-bottom: 0;
+                        
+                    }
+                    
+                }
+                
+                .callout.info {
+                    
+                    border-left-color: #1b809e;
+                    
+                    h4 {
+                        
+                        color: #1b809e;
+                        
+                    }
+                    
+                }
+                
+                .callout.danger {
+                    
+                    border-left-color: #ce4844;
+                    
+                    h4 {
+                        
+                        color: #ce4844;
+                        
+                    }
+                    
+                }
+                
+                .callout.warning {
+                    
+                    border-left-color: #aa6708;
+                    
+                    h4 {
+                        
+                        color: #aa6708;
+                        
+                    }
+                    
+                }
+                
+                .callout.success {
+                    
+                    border-left-color: #5cb85c;
+                    
+                    h4 {
+                        
+                        color: #5cb85c;
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
     
 }
 

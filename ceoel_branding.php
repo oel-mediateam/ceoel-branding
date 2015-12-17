@@ -35,7 +35,7 @@ class BrandingCPT {
     private $slug = 'branding';
     private $menu_icon = 'dashicons-layout';
     private $style = 'css/ceoel_branding.css';
-    //private $script = 'scripts/ceoel_branding.js';
+    private $script = 'scripts/ceoel_branding.js';
     private $single_template = 'single-ceoel_branding.php';
     private $archive_template = 'archive-ceoel_branding.php';
     private $term_template = 'archive-ceoel_branding_term.php';
@@ -61,11 +61,17 @@ class BrandingCPT {
         // register the custom post type
         $this->add_action( 'init', array( &$this, 'register_custom_post' ) );
         
+        // upload media for custom post type to separate media folder
+        $this->add_filter( 'upload_dir', array(&$this, 'set_media_upload_folder') );
+
         // add styles and scripts
         $this->add_action( 'wp_enqueue_scripts', array( &$this, 'include_styles_scripts' ), 15 );
         
         // add single view template
         $this->add_filter( 'template_include', array( &$this, 'include_templates' ), 1 );
+        
+        //get all on term archive page
+        $this->add_action( 'pre_get_posts', array($this, 'return_all_posts') );
         
         // on activation
         register_activation_hook( __FILE__, array( &$this, 'flush_rewrite') );
@@ -236,12 +242,34 @@ class BrandingCPT {
         
     }
     
+    public function set_media_upload_folder($dir) {            
+        // Are we where we want to be?
+        if (!isset($_REQUEST['action']) || 'upload-attachment' !== $_REQUEST['action']) {
+            return $dir;
+        }
+
+        // make sure we have a post ID
+        if (!isset($_REQUEST['post_id'])) {
+            return $dir;
+        }
+        // make sure this post is branding custom post type
+        $type = get_post_type($_REQUEST['post_id']);
+        if($type != 'branding') {
+            return $dir;
+        }
+        // modify the path and url.
+        $uploads = apply_filters("{$type}_upload_directory", $type);
+        $dir['path'] = path_join($dir['basedir'], $uploads);
+        $dir['url'] = path_join($dir['baseurl'], $uploads);
+        return $dir;
+    }
+    
     public function include_styles_scripts() {
         
         wp_enqueue_style( $this->post_type, plugins_url( $this->style, __FILE__ ) );
         
         // add scripts
-		// wp_enqueue_script( $this->post_type, plugins_url( $this->script, __FILE__ ) );
+        wp_enqueue_script( $this->post_type, plugins_url( $this->script, __FILE__ ) );
         
     }
     
@@ -266,6 +294,16 @@ class BrandingCPT {
         }
         
         return $path;
+        
+    }
+    
+    public function return_all_posts($query) {
+        if(is_admin()) {
+            return;
+        }
+        if($query->is_main_query() && is_tax()) {
+            $query->set( 'posts_per_page', -1 );
+        }
         
     }
     

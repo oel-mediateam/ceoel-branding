@@ -375,10 +375,28 @@
     }
     
 }
-
+/* jump menu */
+#ceoel-branding-jump-wrapper {
+    width:100%; 
+    margin-bottom:20px; 
+    padding:10px 0;  
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #ccc;
+    p { 
+        float:left; 
+        width:10%; }
+    ul {  
+        display:inline; 
+        float:left; 
+        width:90%;
+         li { 
+             display:inline-block; 
+             padding:0 5px; 
+         }
+    }
+}
 // tablet & up
 @media screen and (min-width: 768px) {
-    
     .post-type-archive-branding {
     
         .content {
@@ -572,4 +590,12 @@
         
     }
 
+}
+@media screen and (max-width: 500px) {
+    #ceoel-branding-jump-wrapper {
+        p { width:25%; }
+        ul { width:75%;
+            li { display:block;}
+        }
+    }
 }

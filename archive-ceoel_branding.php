@@ -36,7 +36,7 @@
                     
                     $arg = array(
                         
-                        'orderby' => 'id',
+                        'orderby' => 'name',
                         'hide_empty' => 1,
                         'hierarchical' => 0,
                         
